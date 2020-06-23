@@ -5,9 +5,13 @@ export default {
   query
 };
 
-function query() {
+function query(filter) {
   return axios
     .get(BASE_URL)
     .then((res) => res.data)
-    .then((movies) => movies);
+    .then((movies) =>
+      movies.filter((movie) =>
+        movie.title.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
 }

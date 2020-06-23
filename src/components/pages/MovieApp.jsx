@@ -4,6 +4,7 @@ import { loadMovies } from '../../store/actions';
 
 import Loader from '../layout/Loader';
 import MovieList from '../movie/MovieList';
+import MovieFilter from '../movie/MovieFilter';
 
 class MovieApp extends React.Component {
   async componentDidMount() {
@@ -13,7 +14,18 @@ class MovieApp extends React.Component {
 
   render() {
     const { movies } = this.props;
-    return <>{!movies.length ? <Loader /> : <MovieList movies={movies} />}</>;
+    return (
+      <>
+        {!movies.length ? (
+          <Loader />
+        ) : (
+          <>
+            <MovieFilter />
+            <MovieList movies={movies} />
+          </>
+        )}
+      </>
+    );
   }
 }
 

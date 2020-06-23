@@ -1,6 +1,5 @@
 const initialState = {
-  movies: [],
-  movie: null
+  movies: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,11 +8,6 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         movies: action.payload
-      };
-    case 'SET_MOVIE':
-      return {
-        ...state,
-        movie: action.payload
       };
     default:
       return state;
