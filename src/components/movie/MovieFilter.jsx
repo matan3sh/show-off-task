@@ -25,6 +25,7 @@ class MovieFilter extends Component {
           placeholder='Search Movie...'
           onChange={this.onChange}
         />
+        <i className='fas fa-search fa-2x' style={{ color: '#92d4e4' }}></i>
       </div>
     );
   }
